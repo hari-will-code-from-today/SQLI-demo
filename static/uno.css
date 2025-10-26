@@ -1,0 +1,129 @@
+
+:root {
+    --bg-color: #1e1e2e;
+    --grid-color: #f8f9fa;
+    --cell-hover: #d8dee9;
+    --text-color: #eceff4;
+    --border-color: #4c566a;
+    --primary-color: #8fbcbb;
+    --accent-color: #bf616a;
+    --mark-o: #bf616a;  
+    --mark-x: #81a1c1;  
+    --mark-slash: #4c566a;  
+}
+h1, h3 {
+    margin: 5px 0;  
+    padding: 2px 0; 
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#difficulty-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+}
+
+
+.difficulty-btn {
+    background: linear-gradient(120deg, rgba(76, 86, 106, 0.9), rgba(129, 161, 193, 0.9)); 
+    color: var(--text-color);
+    border: none;
+    padding: 8px 14px;  
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.difficulty-btn:hover {
+    background: linear-gradient(120deg, rgba(129, 161, 193, 0.9), rgba(76, 86, 106, 0.9)); 
+    transform: scale(1.05);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(3, 45px); 
+    grid-template-rows: repeat(3, 45px);    
+    gap: 4px; 
+    margin: 20px auto;
+    width: fit-content;
+    background: var(--border-color);
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.cell {
+    width: 45px;  
+    height: 45px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;  
+    font-weight: bold;
+    background-color: var(--grid-color);
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+
+.cell[data-mark="X"] {
+    color: var(--mark-x);
+    text-shadow: 0px 0px 16px var(--mark-x);
+}
+
+.cell[data-mark="O"] {
+    color: var(--mark-o);
+    text-shadow: 0px 0px 16px var(--mark-o);
+}
+
+.cell[data-mark="/"] {
+    color: var(--mark-slash);
+    text-shadow: 0px 0px 16px var(--mark-slash);
+}
+
+.cell:hover {
+    background-color: var(--cell-hover);
+    transform: scale(1.05);
+}
+
+
+button, #reset {
+    background: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover, #reset:hover {
+    background: var(--accent-color);
+    transform: scale(1.05);
+}

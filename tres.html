@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10x10 Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="static/tres.css">
+</head>
+<body>
+    <div id="difficulty-container">
+        <button class="difficulty-btn" onclick="setlevel('uno')">Part 1</button>
+        <button class="difficulty-btn" onclick="setlevel('dos')">Part 2</button>
+        <button class="difficulty-btn" onclick="setlevel('tres')">Part 3</button>
+    </div>
+    <h1>4 in a row</h1>
+    <h3>5 rounds</h3>
+    <div id="grid"></div>
+    <div id="scoreboard">
+        <p id ="player">Player:</p>
+        <p id ="ai">Ai:</p>
+    </div>
+    <button id="NEW_GAME" onclick="startGame()">NEW GAME</button>
+    <div id="hint-container">
+        <img id="hint-sprite" src="static/tic-tac-hoe.png" alt="Hint Sprite">
+        <p id="hint-text"></p>
+    </div>
+    <script src="static/tres.js"></script>
+    <script>
+        function setlevel(level) {
+            document.cookie = `level=${level}; path=/; max-age=3600`; 
+            location.reload(); 
+        }
+    </script>
+</body>
+</html>
+
+<!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NOTES FOR BACKEND:
+1)DECREASE GAME DIFFICULTY
+2)MAKE A LEADERBOARD
+3)USE SAFER QUERY ❌ cursor.execute(INSERT INTO scores VALUES ('{username}', {score}) ❌ 
+-->

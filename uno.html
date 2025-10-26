@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="static/uno.css">
+</head>
+<body>
+    <div id="difficulty-container">
+        <button class="difficulty-btn" onclick="setlevel('uno')">Part 1</button>
+        <button class="difficulty-btn" onclick="setlevel('dos')">Part 2</button>
+        <button class="difficulty-btn" onclick="setlevel('tres')">Part 3</button>
+    </div>
+    <h1>3 to win</h1>
+    <h3>A simple tic tac toe game :)</h3>
+    <div id="grid"></div>
+    <p id="message"></p>
+    <button id="reset" onclick="resetGame()">RESET</button>
+    <script src="static/uno.js"></script>
+    <script>
+        function setlevel(level) {
+            document.cookie = `level=${level}; path=/; max-age=3600`; 
+            location.reload(); 
+        }
+    </script>
+</body>
+</html>
+
+<!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NOTES FOR BACKEND:
+1)DECREASE GAME DIFFICULTY
+2)MAKE A LEADERBOARD
+3)ADD REQUEST VALIDATION IN BACKEND ✅
+-->
